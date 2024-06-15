@@ -1,0 +1,23 @@
+{
+  "brand": [
+    {
+      "image": "/image/brand/FAW.png",
+      "name": "FAW"
+    },    {
+      "image": "/image/brand/Daewoo.png",
+      "name": "Daewoo"
+    },    {
+      "image": "/image/brand/Dongfeng.png",
+      "name": "Dongfeng"
+    },    {
+      "image": "/image/brand/Foton.png",
+      "name": "Foton"
+    },    {
+      "image": "/image/brand/Shacman.png",
+      "name": "Shacman"
+    },    {
+      "image": "/image/brand/Sitrak.png",
+      "name": "Sitrak"
+    }
+  ]
+}

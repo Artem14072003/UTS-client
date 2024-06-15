@@ -1,0 +1,14 @@
+<svg width="75.000000" height="75.000000" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip14_318">
+			<rect id="Check Square/ 24 / Solid" width="75.000000" height="75.000000" transform="translate(0.000000 -0.500000)" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect id="Check Square/ 24 / Solid" width="75.000000" height="75.000000" transform="translate(0.000000 -0.500000)" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip14_318)">
+		<path id="Vector" d="M65.62 5.75L9.37 5.75C7.5 5.75 6.25 7 6.25 8.87L6.25 65.12C6.25 67 7.5 68.25 9.37 68.25L65.62 68.25C67.5 68.25 68.75 67 68.75 65.12L68.75 8.87C68.75 7 67.5 5.75 65.62 5.75ZM55.31 28.56L34.06 49.81C32.81 51.06 30.93 51.06 29.68 49.81L19.68 39.81C18.43 38.56 18.43 36.68 19.68 35.43C20.93 34.18 22.81 34.18 24.06 35.43L31.87 43.25L50.93 24.18C52.18 22.93 54.06 22.93 55.31 24.18C56.56 25.43 56.56 27.31 55.31 28.56Z" fill="#F55757" fill-opacity="1.000000" fill-rule="nonzero"/>
+	</g>
+</svg>

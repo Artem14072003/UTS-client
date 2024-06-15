@@ -1,0 +1,18 @@
+.spare-parts {
+  .info {
+    margin: 80px 0 95px;
+    &-title {
+      margin-bottom: 50px;
+    }
+
+    &-desc {
+      font-size: 20px;
+      line-height: 1.2;
+      color: $netral-7;
+
+      &:first-letter {
+        padding-left: 22px;
+      }
+    }
+  }
+}

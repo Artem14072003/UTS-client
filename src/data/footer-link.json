@@ -1,0 +1,40 @@
+{
+  "links": [
+    {
+      "title": "Сервис",
+      "name": "services",
+      "data": [
+        {
+          "name": "Финансирование",
+          "to": "/financing"
+        },
+        {
+          "name": "Колькулятор",
+          "to": "/calculators"
+        },
+        {
+          "name": "Сервисные контакты",
+          "type": "popappStatement"
+        }
+      ]
+    },
+    {
+      "title": "Поддержка",
+      "name": "support",
+      "data": [
+        {
+          "name": "FAQ",
+          "to": "/support"
+        },
+        {
+          "name": "Обратный звонок",
+          "type": "popappNumber"
+        },
+        {
+          "name": "Сервисные контакты",
+          "type": "popappStatement"
+        }
+      ]
+    }
+  ]
+}

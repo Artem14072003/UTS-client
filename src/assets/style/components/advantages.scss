@@ -1,0 +1,57 @@
+.advantages {
+  margin: 95px 0;
+
+  .advantages-container {
+    padding: 0 80px;
+
+    .advantages-cards {
+      margin: 50px 0 95px;
+      @include flex($gap: 80px 22px, $content: space-between);
+      flex-wrap: wrap;
+
+      .advantages-card {
+        @include flex($gap: 15px);
+
+        &_info {
+          padding: 20px 20px 20px 0;
+
+          &-title {
+            max-width: 306px;
+            font-family: "Lato-Medium", sans-serif;
+            font-size: 26px;
+            line-height: 1.2;
+            color: $netral-7;
+            padding-bottom: 10px;
+          }
+
+          &-desc {
+            max-width: 267px;
+            font-family: "Lato-Medium", sans-serif;
+            color: $netral-5;
+          }
+        }
+
+        @media (max-width: 768px) {
+          flex-wrap: wrap;
+          justify-content: center;
+
+          &_info {
+            padding: 0;
+
+            &-title {
+              text-align: center;
+            }
+
+            &-desc {
+              text-align: center;
+            }
+          }
+        }
+      }
+
+      @media (max-width: 1024px) {
+        justify-content: center;
+      }
+    }
+  }
+}

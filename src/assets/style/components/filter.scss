@@ -1,0 +1,86 @@
+.filter {
+  margin: 95px 0 95px - 26px;
+  @include flex($direction: column, $content: stretch, $items: stretch);
+
+  &-btn {
+    @include flex($gap: 10px);
+    align-self: end;
+    padding: 20px 25px !important;
+    margin-bottom: 26px;
+    font-family: "Lato-Bold", sans-serif;
+    line-height: 1.2;
+    font-weight: 700;
+
+    path {
+      @include transition(fill);
+    }
+
+    &:hover {
+      path {
+        fill: $red-5;
+      }
+    }
+  }
+
+  &-panel {
+    @include flex($content: space-between, $items: stretch, $gap: 15px);
+    flex-wrap: wrap;
+    background-color: $red-2;
+    padding: 30px 20px;
+    position: relative;
+    filter: drop-shadow(0 0 7px #F66060);
+
+    .block-input:nth-of-type(3) {
+      flex-basis: 175px;
+    }
+
+    input,
+    select {
+      background-color: $netral-white;
+      padding: 16px 20px 15px 25px
+    }
+    .btn {
+      padding: 16px 45px;
+
+      &-primary {
+        padding: 16px 35px;
+      }
+    }
+
+    & .errors {
+      position: relative;
+
+      p {
+        position: absolute;
+        bottom: -20px;
+      }
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: -8px;
+      right: 50px;
+      width: 0;
+      height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-bottom: 14px solid $red-2;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .block-input{
+      flex: 1 1 100%;
+    }
+    .btn {
+      flex: 1;
+    }
+  }
+
+  @media (max-width: 426px) {
+    .btn {
+      flex: 1 0 100%;
+    }
+  }
+}

@@ -1,0 +1,142 @@
+.catalog-info {
+  height: 100%;
+
+  .content_info {
+    margin: 115px 0 95px;
+
+    &_title {
+      margin-bottom: 40px;
+    }
+
+    &_desc {
+      font-size: 20px;
+      line-height: 1.2;
+      color: $netral-7;
+      margin-bottom: 50px;
+
+      &:first-letter {
+        padding-left: 20px;
+      }
+    }
+
+    &_content {
+      @include flex($content: space-between);
+
+      .price_title {
+        padding: 12px 0;
+        font-family: "Lato-Bold", sans-serif;
+        font-weight: 700;
+        font-size: clamp(20px, 5vw, 33px);
+        line-height: 1.2;
+        color: $netral-9;
+
+        .price_value {
+          padding-left: clamp(21px, 5vw, 50px);
+          color: $red-5;
+        }
+      }
+
+      .btn {
+        font-family: "Lato-Bold", sans-serif;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 1.2;
+        text-transform: uppercase;
+        padding: 0 35px;
+        align-self: stretch;
+      }
+    }
+  }
+
+  .table-container {
+    @include flex($items: stretch, $gap: 121px);
+
+    .table {
+      flex: 1 0 400px;
+
+      .table-body {
+        .table-content {
+          .content-item {
+            font-family: "Lato-Bold", sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 1.2;
+            text-transform: uppercase;
+          }
+        }
+      }
+
+      &.w-full {
+        flex: 1 0 100%
+      }
+    }
+
+    &.one-table {
+      flex-wrap: wrap;
+      gap: 0;
+    }
+  }
+
+  .similar {
+    margin-top: 95px;
+
+    &-title {
+      text-align: left;
+      padding-left: 30px;
+    }
+  }
+
+  @media (max-width: 1260px) {
+    .table-container {
+      flex-wrap: wrap;
+      gap: 0;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .content_info {
+      margin: 115px 0 95px;
+
+      &_title {
+        margin-bottom: 40px;
+      }
+
+      &_desc {
+        white-space: normal;
+        word-break: break-all;
+      }
+
+      &_content {
+        gap: 35px 40px;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .btn {
+          font-family: "Lato-Bold", sans-serif;
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 1.2;
+          text-transform: uppercase;
+          padding: 20px 35px;
+          align-self: stretch;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 425px) {
+    .table-container {
+      .table {
+        flex: 1 0 auto;
+
+        .table-body {
+          .table-content {
+            .content-item {
+              padding: 25px 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

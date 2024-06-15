@@ -1,0 +1,62 @@
+.brand {
+  background-color: $red-2;
+
+  .brand-container {
+
+    .brand-content {
+      position: relative;
+      padding: 82px;
+      overflow: hidden;
+      @include flex($gap: 32px);
+
+      .brand-tinker {
+        position: absolute;
+        width: 100%;
+        @include flex($gap: 32px);
+        animation: repit-brand 20s infinite linear running;
+
+        .brand-link {
+          width: 179px;
+          left: 0;
+          filter: grayscale(100%);
+          @include transition($name: filter);
+
+          .brand-image {
+            min-width: 170px;
+          }
+
+          &:hover {
+            filter: grayscale(0);
+          }
+        }
+
+        &:last-of-type {
+          left: 1240px;
+        }
+
+        @media (max-width: 1024px) {
+          position: static;
+          flex-wrap: wrap;
+          animation: none;
+
+          .brand-link {
+            filter: none;
+          }
+
+          .brand-image {
+            width: 115px;
+            height: auto;
+          }
+
+          &:last-of-type {
+            display: none;
+          }
+        }
+      }
+
+      .stop {
+        animation: repit-brand paused;
+      }
+    }
+  }
+}

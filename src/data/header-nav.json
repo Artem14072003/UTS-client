@@ -1,0 +1,28 @@
+{
+  "nav": [
+    {
+      "name": "Главная",
+      "to": "/"
+    },
+    {
+      "name": "Каталог",
+      "to": "/catalog"
+    },
+    {
+      "name": "Запчасти",
+      "to": "/spare-parts"
+    },
+    {
+      "name": "Калькулятор",
+      "to": "/calculators"
+    },
+    {
+      "name": "Контакты",
+      "to": "/contact"
+    },
+    {
+      "name": "Подать заявку",
+      "type": "popappStatement"
+    }
+  ]
+}

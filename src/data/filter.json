@@ -1,0 +1,51 @@
+{
+  "filters": [
+    {
+      "id": "search",
+      "type": "search",
+      "name": "search",
+      "placeholder": "Поиск по наименованю грузового авто"
+    },
+    {
+      "id": "price",
+      "type": "number",
+      "name": "price",
+      "placeholder": "Стоймость"
+    },
+    {
+      "id": "brand",
+      "type": "select",
+      "name": "brands",
+      "selections": [
+        {
+          "name": "",
+          "value": "Марка"
+        },
+        {
+          "name": "FAW",
+          "value": "FAW"
+        },
+        {
+          "name": "SITRAK",
+          "value": "SITRAK"
+        },
+        {
+          "name": "FOTON",
+          "value": "FOTON"
+        },
+        {
+          "name": "SHACMAN",
+          "value": "SHACMAN"
+        },
+        {
+          "name": "DONGFENG",
+          "value": "DONGFENG"
+        },
+        {
+          "name": "DAEWOO",
+          "value": "DAEWOO"
+        }
+      ]
+    }
+  ]
+}

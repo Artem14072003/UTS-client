@@ -1,0 +1,281 @@
+.popapp {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  z-index: 5;
+
+  @include flex();
+
+  .popapp-container {
+    padding: 20px 160px 30px;
+    position: relative;
+    cursor: default;
+    background-color: $netral-white;
+
+    .popapp-title {
+      font-family: "Lato-Bold", sans-serif;
+      font-size: clamp(28px, 6vw, 56px);
+      font-weight: 700;
+      line-height: 1.2;
+      padding-bottom: 20px;
+      text-align: center;
+      color: $netral-8
+    }
+
+    .popapp-cross {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      cursor: pointer;
+
+      line {
+        stroke: $netral-7;
+        @include transition(stroke);
+
+      }
+
+      &:hover {
+        line {
+          stroke: $netral-dark;
+        }
+      }
+    }
+
+    .poppap-content {
+      .popapp-image {
+        display: block;
+        margin: 0 auto;
+        max-width: 480px;
+        max-height: 280px;
+        object-fit: contain;
+      }
+
+      .popapp-statements_form {
+        .block-input {
+          padding-bottom: 35px;
+
+          input,
+          select,
+          textarea {
+            width: 559px;
+
+            &.errors {
+              box-shadow: 0 0 25px rgba(180, 13, 13, 0.2);
+            }
+          }
+        }
+
+        .block-btn {
+          @include flex();
+
+        }
+      }
+
+      .btn-popapp {
+        font-family: "Lato-Medium", sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        padding: 20px 120px;
+        line-height: 1.2;
+      }
+
+      .popapp-phones {
+        &_title {
+          font-family: "Lato-Medium", sans-serif;
+          font-weight: 500;
+          font-size: clamp(20px, 5vw, 26px);
+          line-height: 1.2;
+          padding-bottom: 15px;
+        }
+
+        .popapp-phone {
+          @include flex($content: space-between, $items: stretch);
+          overflow-y: auto;
+
+          &_info {
+            position: relative;
+            padding: 10px 30px;
+            @include flex($content: space-between);
+            flex: 1;
+            border: 1px solid $red-5;
+
+            .phone-info_title {
+              font-family: "Lato-Bold", sans-serif;
+              font-size: 33px;
+              font-weight: 700;
+              line-height: 1.2;
+              color: $netral-dark;
+
+            }
+
+            .copy {
+              cursor: pointer;
+
+              path {
+                @include transition($name: fill);
+              }
+
+              &:hover {
+                path {
+                  fill: $red-3;
+                }
+              }
+            }
+          }
+
+          .btn {
+            padding: 12px 32px 13px;
+
+            path {
+              @include transition(stroke);
+              stroke: $netral-white;
+            }
+
+            &:hover {
+              path {
+                stroke: $red-5
+              }
+            }
+          }
+
+          &:not(&:last-of-type) {
+            padding-bottom: 15px;
+          }
+        }
+
+        &:not(&:first-of-type) {
+          padding-top: 20px;
+        }
+      }
+
+      .popapp-numbers_btn {
+        padding-top: 70px;
+        @include flex($direction: column);
+
+        &-title {
+          max-width: 527px;
+          font-family: "Lato-Medium", sans-serif;
+          font-weight: 500;
+          font-size: 20px;
+          text-align: center;
+          line-height: 1.2;
+          padding-bottom: 15px;
+          color: $netral-5
+        }
+      }
+
+      .popapp-btn {
+        @include flex($content: stretch, $items: stretch, $gap: 20px);
+
+        .btn {
+          font-family: "Lato-Medium", sans-serif;
+          font-size: 20px;
+          line-height: 1.2;
+          font-weight: 500;
+          flex: 1;
+          padding: 20px 0;
+
+          &:last-of-type {
+            @include flex($gap: 10px)
+
+          }
+        }
+      }
+    }
+
+    &.popappSpareParts {
+      flex-basis: 840px;
+    }
+  }
+
+
+  @media (max-width: 1400px) {
+    display: block;
+    overflow: auto;
+    .popapp-container {
+      min-height: 100%;
+
+      .poppap-content {
+        .popapp-statements_form {
+          .block-input {
+            @include flex($direction: column);
+
+            label {
+              align-self: stretch;
+            }
+
+            input,
+            select,
+            textarea {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .popapp-container {
+      padding: clamp(40px, 5vw, 20px) clamp(15px, 5vw, 100px) 30px;
+
+      p.errors {
+        padding: 10px 0 0;
+      }
+
+      label {
+        text-align: center;
+        padding: 0 0 10px;
+      }
+
+      .poppap-content {
+        .btn-popapp {
+          padding: 20px 0;
+          width: 100%;
+        }
+
+        .popapp-image {
+          max-width: 100%;
+        }
+
+        .popapp-phone {
+          &_info {
+            padding: 15px 15px !important;
+
+            .phone-info_title {
+              font-size: clamp(18px, 5vw, 33px) !important;
+            }
+
+            .copy {
+              cursor: pointer;
+
+              path {
+                @include transition($name: fill);
+              }
+
+              &:hover {
+                path {
+                  fill: $red-3;
+                }
+              }
+            }
+          }
+        }
+
+        .btn {
+          padding: 15px !important;
+        }
+      }
+
+      .popapp-btn {
+        flex-wrap: wrap;
+
+        .btn {
+          flex: 1 0 100% !important;
+        }
+      }
+    }
+  }
+}

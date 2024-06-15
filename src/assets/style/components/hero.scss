@@ -1,0 +1,128 @@
+.hero {
+  margin-top: 48px;
+
+  .hero-container {
+    max-width: 1440px;
+    min-height: 640px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-left: 100px;
+    @include flex($content: space-between, $items: stretch);
+
+    .hero-info {
+      flex-basis: 735px;
+      padding-top: 79px;
+      animation: departureRight 1.2s 1 ease;
+      z-index: 2;
+
+      .hero-title {
+        font-family: "Lato-Bold", sans-serif;
+        font-size: 56px;
+        line-height: 1.2;
+        font-weight: 700;
+        color: $netral-8
+      }
+
+      .hero-desc {
+        max-width: 514px;
+        font-family: "Lato-Light", sans-serif;
+        font-size: 20px;
+        line-height: 1.2;
+        font-weight: 300;
+        padding: 20px 0 60px;
+        color: $netral-7
+      }
+
+      .hero-buttons {
+        font-family: "Lato-Medium", sans-serif;
+        font-size: 20px;
+
+        .btn {
+          padding: 20px 35px;
+
+          &:first-child {
+            margin-right: 30px;
+          }
+        }
+      }
+    }
+
+    .hero-bg {
+      position: relative;
+      flex: 1;
+      align-self: stretch;
+      z-index: 1;
+
+      .hero-image {
+        position: absolute;
+        top: -50px;
+        right: -80px;
+        max-width: 836px;
+        min-height: 758px;
+
+        &:first-of-type {
+          max-width: 790px;
+          min-height: 534px;
+          top: -6px;
+          left: auto;
+          right: 0;
+        }
+
+        &:last-of-type {
+          max-width: 856px;
+          min-height: 727px;
+          top: -31px;
+          left: auto;
+          right: -30px;
+
+        }
+
+      }
+
+      .hero-animation {
+        animation: departureLeft 2s 1 ease;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .hero-bg {
+        .hero-image {
+          &:last-of-type,
+          &:nth-child(2) {
+            display: none;
+          }
+        }
+
+        .hero-animation {
+          animation: none;
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      padding: 0 clamp(20px, 6vw, 80px);
+
+      .hero-info {
+        text-align: center;
+
+        .hero-title {
+          font-size: clamp(32px, 5vw, 56px);
+        }
+
+        .hero-desc {
+          max-width: 100%;
+        }
+
+        .hero-buttons {
+          @include flex($gap: 11px 20px);
+          flex-wrap: wrap;
+
+          .btn:first-of-type {
+            margin: 0;
+          }
+        }
+
+      }
+    }
+  }
+}

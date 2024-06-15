@@ -1,0 +1,22 @@
+{
+  "service": [
+    {
+      "bg": "/image/service/card-1.png",
+      "icon": "/image/service/icon/warranty.svg",
+      "title": "Гарантийное обслуживание",
+      "desc": "Наша компания предлагает своим клиентам гарантированное обслуживание для всех видов грузовых автомобилей..."
+    },
+    {
+      "bg": "/image/service/card-2.png",
+      "icon": "/image/service/icon/washing.png",
+      "title": "Мойка",
+      "desc": "Наша компания предлагает профессиональную мойку грузовых автомобилей..."
+    },
+    {
+      "bg": "/image/service/card-3.png",
+      "icon": "/image/service/icon/spare_parts.png",
+      "title": "Продажа запчастей",
+      "desc": "Наша компания предлагает широкий ассортимент запчастей для всех видов тгрузовых автомобилей..."
+    }
+  ]
+}

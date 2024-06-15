@@ -1,0 +1,499 @@
+@import "./reset/reset.css";
+@import 'settings/style';
+@import "components/header";
+@import "components/hero";
+@import "components/brands";
+@import "components/new-truck";
+@import "components/service";
+@import "components/advantages";
+@import "components/footer";
+@import "components/popapp";
+@import "components/alert";
+@import "components/filter";
+@import "components/slider";
+@import "components/pagination";
+@import "components/spare-parts/spare-parts";
+@import "components/calculator/calculator";
+@import "components/contact/contact";
+@import "components/login/login";
+@import "components/catalog-info";
+@import "components/loading/loading";
+@import "components/search/search";
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+
+  body {
+    font-family: 'Lato-Regular', sans-serif;
+    height: 100%;
+    font-size: 15px;
+
+    #root {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      main {
+        flex: 1 0 1px;
+
+        h1 {
+          &.title {
+            text-align: center;
+            font-family: "Lato-Bold", sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            font-size: clamp(32px, 5vw, 56px);
+            color: $netral-8;
+          }
+
+
+          &.hidden {
+            opacity: 0;
+            visibility: hidden;
+          }
+        }
+      }
+    }
+
+    // Стили для UI
+
+    .container {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 100px;
+
+      @media (max-width: 768px) {
+        padding: 0 clamp(20px, 6vw, 80px);
+      }
+    }
+
+    h2 {
+      &.title {
+        font-family: "Lato-Bold", sans-serif;
+        font-weight: 700;
+        line-height: 1.2;
+        text-align: center;
+        color: $netral-8;
+        font-size: 33px;
+        margin-bottom: 60px;
+      }
+    }
+
+    p.errors {
+      color: $red-5;
+      padding: 10px 0 0 20px;
+    }
+
+    .btn {
+      color: $netral-white;
+      background-color: $red-5;
+      padding: 10px 25px;
+      cursor: pointer;
+      border: 1px solid transparent;
+      @include transition(background-color, color, border-color, box-shadow);
+
+      &-primary {
+        color: $red-5;
+        background-color: $netral-white;
+        border: 1px solid $red-5;
+        box-shadow: 0 0 25px rgba(180, 13, 13, 0.2);
+        @include transition(background-color, color, border-color);
+
+        path {
+          @include transition(stroke);
+        }
+
+        &:not(&:disabled):hover {
+          color: $netral-white;
+          background-color: $red-5;
+          border-color: transparent;
+
+          path {
+            stroke: $netral-white;
+          }
+        }
+      }
+
+      &-gray {
+        color: $netral-7;
+        background-color: $netral-white;
+        border: 2px solid $netral-7;
+
+        @if (path) {
+          path {
+            @include transition(stroke);
+            stroke: $netral-7;
+          }
+        }
+
+        &:not(&:disabled):hover {
+          @if (path) {
+            path {
+              stroke: $netral-white;
+            }
+          }
+
+          background-color: $red-5;
+          color: $netral-white;
+          border: 2px solid transparent;
+        }
+      }
+
+      &:not(&-primary):not(&-gray):not(:disabled):hover {
+        color: $red-5;
+        box-shadow: 0 0 25px rgba(180, 13, 13, 0.2);
+        background-color: $netral-white;
+        border-color: $red-5;
+      }
+    }
+
+    .prev-title {
+      display: block;
+      text-transform: uppercase;
+      color: $red-3;
+      font-family: "Lato-Bold", sans-serif;
+      font-weight: 700;
+      font-size: clamp(18px, 4vw, 20px);
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    h2.titleInfo {
+      color: $netral-7;
+      font-family: "Lato-Medium", sans-serif;
+      font-weight: 500;
+      font-size: clamp(28px, 5vw, 43px);
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    p.descInfo {
+      color: $netral-5;
+      padding-top: 10px;
+      line-height: 1.2;
+
+      text-align: center;
+    }
+
+    .card {
+      max-width: 400px;
+
+      .card-img {
+        max-width: 400px;
+        height: 280px;
+
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      .card-info {
+        @include flex();
+        flex-direction: column;
+        box-shadow: 0 5px 20px rgba(255, 79, 79, 0.1);
+        padding: 5px 15px 15px;
+
+        .card-title {
+          font-family: 'Lato-Medium', sans-serif;
+          font-size: 26px;
+          font-weight: 500;
+          line-height: 1.2;
+          color: $netral-7;
+        }
+
+        .card-desc {
+          padding: 20px 0 10px;
+          align-self: stretch;
+          font-family: 'Lato-Black', sans-serif;
+          font-size: 26px;
+          line-height: 1.2;
+          @include flex($content: space-between);
+        }
+
+        .card-btn_container {
+          width: 100%;
+          @include flex($content: space-between, $gap: 10px);
+
+          .card-btn {
+            @include flex($gap: 10px);
+            border-width: 2px;
+
+            button {
+              flex: 1 0;
+            }
+
+            &:last-of-type {
+              padding: 20px 15px;
+            }
+          }
+        }
+
+        .card-btn {
+          text-align: center;
+          align-self: stretch;
+          padding: 20px 0;
+          font-family: "Lato-Medium", sans-serif;
+          font-size: 20px;
+          line-height: 1.2;
+        }
+      }
+    }
+
+    .wrapper-card {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 400px));
+      gap: 20px 15px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 95px;
+    }
+
+    .social {
+      @include flex($content: stretch, $gap: 15px);
+
+      .icons {
+        padding: 12px 10px;
+        border: 1px solid $red-5;
+        @include flex();
+
+        @include transition(background-color);
+
+        svg {
+          min-height: 15px;
+          width: 100%;
+          max-width: none;
+
+          path {
+            fill: $red-5;
+            @include transition(fill);
+
+            &:last-of-type {
+              &#Fill-2 {
+                fill: $netral-white;
+              }
+            }
+
+          }
+        }
+
+        &:hover {
+          background-color: $red-5;
+
+          path {
+            fill: $netral-white;
+
+            &:last-of-type {
+              &#Fill-2 {
+                fill: $red-5;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    label {
+      display: block;
+      font-family: "Lato-Medium", sans-serif;
+      font-size: 26px;
+      font-weight: 500;
+      color: $netral-dark;
+      padding: 0 0 10px 30px;
+    }
+
+    input,
+    select,
+    textarea {
+      display: block;
+      width: 100%;
+      padding: 23px 31px 23px 37px;
+      border: 1px solid $red-3;
+      font-family: "Lato-Medium", sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: $netral-dark;
+      @include transition(border-color, box-shadow);
+
+      &:focus {
+        border-color: $red-5;
+        outline: none;
+      }
+    }
+
+    input[type=range] {
+      accent-color: $red-5;
+      background-color: white;
+      padding: 0;
+    }
+
+    .container-sad {
+      height: 100%;
+    }
+
+    .sad {
+      padding-bottom: 95px;
+      height: inherit;
+      @include flex($direction: column, $gap: 20px);
+
+      &_image {
+        max-width: 200px;
+        height: auto;
+      }
+
+      &_text {
+      }
+    }
+
+
+    .error-page {
+      flex: 1 0;
+      @include flex($direction: column, $gap: 20px);
+
+      &_text {
+        @include titleOne()
+      }
+
+      &_status {
+        @include titleOne($red-5)
+      }
+
+      &_statusText {
+        font-family: "Lato-Medium", sans-serif;
+        color: $netral-7;
+        font-size: 20px
+      }
+    }
+
+  }
+
+  .block-select {
+    position: relative;
+
+    select {
+      width: 100%;
+      cursor: pointer;
+      appearance: none;
+
+      option {
+        color: $netral-7;
+
+        &:hover {
+          color: $red-5;
+        }
+      }
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 47%;
+      right: 10%;
+      transform: translate(10%, 47%);
+      width: 25px;
+      height: 16px;
+      background: url("../../../public/arrow-select.svg") no-repeat center/cover;
+      cursor: pointer;
+    }
+  }
+
+  textarea {
+    resize: none;
+    min-height: 165px;
+    font-family: "Lato-Regular", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .table-wrapper {
+    margin-bottom: 95px;
+
+    .title-table {
+      font-family: "Lato-Bold", sans-serif;
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: center;
+      color: $netral-8;
+      font-size: 33px;
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+
+      .table-body {
+
+        .content {
+          text-align: center;
+          vertical-align: middle;
+          padding: 25px 32px 27px;
+
+          .content-item {
+            padding: 25px 32px 26px;
+            font-family: "Lato-Bold", sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 1.2;
+          }
+
+          &:nth-of-type(2n + 1) {
+            background-color: $red-3;
+          }
+
+        }
+      }
+    }
+
+    &.spareParts {
+      padding: 22px 0 24px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .prev-title,
+    h2.titleInfo {
+      padding-bottom: 20px;
+    }
+
+    body {
+      .card {
+        .card-info {
+          @include flex();
+          flex-direction: column;
+          box-shadow: 0 5px 20px rgba(255, 79, 79, 0.1);
+          padding: 5px 15px 15px;
+
+          .card-title {
+            font-family: 'Lato-Medium', sans-serif;
+            font-size: 26px;
+            font-weight: 500;
+            line-height: 1.2;
+            color: $netral-7;
+          }
+
+          .card-desc {
+            padding: 20px 0 10px;
+            align-self: stretch;
+            font-family: 'Lato-Black', sans-serif;
+            font-size: clamp(20px, 2vw, 26px);
+            line-height: 1.2;
+            @include flex($content: space-between);
+            flex-wrap: wrap;
+          }
+
+          .card-btn_container {
+            flex-wrap: wrap;
+
+            .btn {
+              flex: 1 0 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

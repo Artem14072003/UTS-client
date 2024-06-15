@@ -1,0 +1,217 @@
+.header {
+  margin-top: 38px;
+
+  .header-container {
+    @include flex($content: space-between, $items: center);
+
+    .logo {
+      @include transition(transform);
+
+      img {
+        min-width: 80px;
+      }
+
+      &:focus {
+        outline: none;
+        transform: scale(1.2);
+      }
+    }
+
+    .navigation {
+      .link-items {
+        @include flex($content: space-between, $items: center, $gap: 33px);
+
+        .link-item {
+
+          .link {
+            display: block;
+            padding: 10px;
+            color: $netral-9;
+            @include transition($name: color);
+
+            &:not(.active):hover {
+              color: $red-5;
+            }
+
+            &.active {
+              color: $red-5;
+            }
+          }
+
+          .btn-header {
+            padding: 10px;
+          }
+        }
+      }
+
+    }
+
+    .btn-adaptive,
+    .burger_menu {
+      display: none;
+    }
+
+    .burger_menu {
+      position: relative;
+
+      .burger_menu-btn {
+        padding: 22px 10px;
+        box-shadow: none;
+        position: relative;
+        border: 2px solid $red-5;
+
+        .line {
+          display: block;
+          width: 38px;
+          height: 2px;
+          background-color: $red-5;
+          @include transition(opacity, visibility);
+        }
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          left: 10px;
+          right: 10px;
+          height: 2px;
+          background-color: $red-5;
+          @include transition(transform)
+        }
+
+        &::before {
+          top: 12px;
+        }
+
+        &::after {
+          bottom: 12px
+        }
+
+        &:hover {
+          background-color: $netral-white;
+          border: 2px solid $red-5;
+        }
+
+        &.active {
+          .line {
+            visibility: hidden;
+            opacity: 0;
+          }
+
+          &::before {
+            transform: translateY(9px) rotate(-45deg);
+          }
+
+          &::after {
+            transform: translateY(-10px) rotate(45deg);
+          }
+        }
+      }
+
+      .menu {
+        visibility: hidden;
+        transform: translateX(-250px);
+        position: fixed;
+        height: 100%;
+        left: 0;
+        top: 0;
+        border-right: 1px solid $netral-7;
+        z-index: 5;
+        @include transition(transform, visibility);
+
+        &-items {
+          height: 100%;
+          padding: 0 40px;
+          @include flex($direction: column, $gap: 15px);
+          background-color: $netral-white;
+
+          .link-item > a {
+            font-family: "Lato-Medium", sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            color: $netral-dark;
+
+            &.active {
+              color: $red-5;
+            }
+          }
+        }
+
+        &.active {
+          transform: translateX(0);
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .header-container {
+      gap: 20px;
+      .navigation {
+        display: none;
+      }
+
+      .btn-adaptive,
+      .burger_menu {
+        display: block;
+      }
+
+      .btn-cross,
+      .btn-application {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .header-container {
+
+      .btn-adaptive {
+        display: none;
+      }
+
+      .burger_menu {
+
+        .burger_menu-btn {
+          &.active {
+            .line {
+              visibility: visible;
+              opacity: 1;
+            }
+            &::before,
+            &::after {
+              transform: none;
+            }
+          }
+        }
+
+        .menu {
+          right: 0;
+          transform: translateX(-500px);
+        }
+
+        .btn-cross,
+        .btn-application {
+          display: block;
+        }
+
+        .btn-cross {
+          position: absolute;
+          right: 10px;
+          top: 10px;
+          box-shadow: none;
+          border: none;
+
+          line {
+            stroke: $red-5;
+          }
+
+          &:hover {
+            background-color: $netral-white;
+          }
+        }
+      }
+    }
+  }
+}

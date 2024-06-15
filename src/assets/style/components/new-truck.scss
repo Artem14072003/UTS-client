@@ -1,0 +1,18 @@
+.new_trucks {
+  margin: 95px 0;
+  .new_trucks-container {
+    @include flex($direction: column, $content: stretch, $items: stretch);
+
+    .new_trucks-cars {
+      padding: 50px 0;
+      @include flex($gap: 20px);
+      flex-wrap: wrap;
+
+
+    }
+    .new_trucks-btn {
+      padding: 20px 35px;
+      align-self: center;
+    }
+  }
+}
