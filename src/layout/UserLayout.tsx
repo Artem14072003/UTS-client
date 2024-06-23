@@ -10,10 +10,10 @@ import {useLocation} from "react-router-dom";
 const UserLayout = ({className = "", children}: { className?: string; children: React.ReactNode }) => {
 
     const {popapp } = usePopapp()
-    const {pathname} = useLocation();
+    const {pathname, state} = useLocation();
 
     useEffect(() => {
-        if (pathname.includes('/spare-parts/')) return
+        if (pathname.includes('/spare-parts/') || (state && state.includes('/catalog/brand/'))) return
         window.scrollTo(0, 0)
     }, [pathname]);
 

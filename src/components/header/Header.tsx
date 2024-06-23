@@ -33,11 +33,11 @@ const Header = () => {
                 <Logo/>
                 <nav className={"navigation"}>
                     <ul className={'link-items'}>
-                        {nav.map(item => (
+                        {nav.map((item, idx) => (
                                 <li className={'link-item'} key={item.to ?? item.type}>
                                     {item.to ? (
                                         <Link
-                                            className={`link ${pathname === item.to ? 'active' : ''}`}
+                                            className={`link ${pathname === item.to ? 'active' : idx === 1 && pathname.includes('/catalog/brand/') ? 'active' : '' }`}
                                             to={item.to}
                                         >
                                             {item.name}

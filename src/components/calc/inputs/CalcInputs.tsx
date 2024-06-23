@@ -62,7 +62,7 @@ const CalcInputs = ({data, register, getValues, setValue, watch}: ICalcInputs) =
 
             <Input
                 id={'select'}
-                title={'Срок кредита'}
+                title={'Срок кредита в месяцах'}
                 type={'select'}
                 name={'years'}
                 register={register}

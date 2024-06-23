@@ -32,6 +32,9 @@ const WrapperCard = ({className, data, title, pagination}: IWrapperCard) => {
                             {title ?? `Нет ${!nav.includes('/catalog') ? 'подходящей запчасти' : 'подходящего грузовика'} под
                         ваш запрос!`}
                         </p>
+                        <p className={'search-text'}>
+                            Чтобы увидеть все {!nav.includes('/catalog') ? 'запчасти' : 'грузовики'}, очистите поиск в фильтрации.
+                        </p>
                     </div>
                 )
             }

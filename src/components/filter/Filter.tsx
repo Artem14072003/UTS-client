@@ -5,12 +5,14 @@ import {useForm} from "react-hook-form";
 import data from "../../data/filter.json"
 import {IComponentFilter, IFilter} from "../../assets/type/type.ts";
 import FilterIcon from "../../UI/icon/FilterIcon.tsx";
-import {useParams} from "react-router-dom";
+import {useLocation, useNavigate, useParams} from "react-router-dom";
 
 const filters: IFilter[] = data.filters
 
 const Filter = ({data, setNewData}: IComponentFilter) => {
     const {name} = useParams();
+    const nav = useNavigate();
+    const {pathname} = useLocation();
     const [isPanel, setIsPanel] = useState(false);
 
     const {
@@ -37,13 +39,13 @@ const Filter = ({data, setNewData}: IComponentFilter) => {
 
         return setNewData(() => filteredData())
     })
+
     useEffect(() => {
         if (name && setNewData) {
             setValue('brands', name.toUpperCase())
             setNewData(data.filter(search => search.model === name.toUpperCase()))
             if (!isPanel) return reset(['search', 'price'])
         }
-        if (!isPanel) return reset()
     }, [isPanel])
 
     return (
@@ -76,6 +78,7 @@ const Filter = ({data, setNewData}: IComponentFilter) => {
                     <Button>Поиск</Button>
                     <Button className={'btn-primary'} type={'reset'} onClick={() => {
                         if (!setNewData) return
+                        if (name) nav('/catalog', {state: pathname})
                         setNewData(null)
                         reset()
                     }}>Очистить</Button>

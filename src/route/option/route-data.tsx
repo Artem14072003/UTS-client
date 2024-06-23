@@ -18,6 +18,7 @@ export const route = createBrowserRouter([
         element: <Catalog/>,
         children: [{
             path: 'brand/:name',
+            element: <Catalog/>,
         }]
     }, {
         path: '/catalog/:id',

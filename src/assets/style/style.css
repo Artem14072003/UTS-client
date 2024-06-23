@@ -418,6 +418,9 @@
   gap: 20px;
   flex-wrap: wrap;
 }
+.new_trucks .new_trucks-container .new_trucks-cars .card {
+  flex-basis: 400px;
+}
 .new_trucks .new_trucks-container .new_trucks-btn {
   padding: 20px 35px;
   align-self: center;
@@ -1436,6 +1439,13 @@
 .contact .contact-container .contact-map .btn {
   align-self: start;
   padding: 20px 35px;
+  margin-left: 10px;
+}
+@media (max-width: 1024px) {
+  .contact .contact-container .contact-map .btn {
+    align-self: center;
+    margin-left: 0;
+  }
 }
 @media (max-width: 768px) {
   .contact .contact-container .informations .info:last-of-type svg {
@@ -1451,9 +1461,6 @@
   .contact .contact-container .contact-info .descInfo {
     text-align: center;
   }
-}
-.contact .contact-container .contact-map .btn {
-  align-self: center;
 }
 
 .login {

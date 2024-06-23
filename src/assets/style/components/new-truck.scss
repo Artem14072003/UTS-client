@@ -8,6 +8,9 @@
       @include flex($gap: 20px);
       flex-wrap: wrap;
 
+      .card {
+        flex-basis: 400px;
+      }
 
     }
     .new_trucks-btn {

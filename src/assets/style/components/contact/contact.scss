@@ -75,11 +75,20 @@
       .btn {
         align-self: start;
         padding: 20px 35px;
+        margin-left: 10px;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .contact-map {
+        .btn {
+          align-self: center;
+          margin-left: 0;
+        }
       }
     }
 
     @media (max-width: 768px) {
-
       .informations {
         .info {
           &:last-of-type {
@@ -104,12 +113,6 @@
         .descInfo {
           text-align: center;
         }
-      }
-    }
-
-    .contact-map {
-      .btn {
-        align-self: center;
       }
     }
   }

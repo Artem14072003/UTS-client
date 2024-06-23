@@ -22,7 +22,7 @@ const CalcResult = ({data, watch}: ICalcResult) => {
     }, [watch("lizing"), watch('contribution'), watch('lizingRang'), watch('contributionRang'), watch('years'), payment]);
 
     const message = useMemo(() =>
-        `Здравствуйте! Меня заинтересовал лизинг на сумму в ${watch('lizing')} рублей!`, [watch('lizing')])
+        `Здравствуйте! Меня заинтересовал лизинг на сумму в ${Intl.NumberFormat('ru-RU').format(watch('lizing'))} рублей!`, [watch('lizing')])
 
     return (
         <div className={'result'}>

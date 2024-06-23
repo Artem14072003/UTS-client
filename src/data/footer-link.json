@@ -14,7 +14,7 @@
         },
         {
           "name": "Сервисные контакты",
-          "type": "popappStatement"
+          "type": "popappNumber"
         }
       ]
     },
@@ -28,11 +28,11 @@
         },
         {
           "name": "Обратный звонок",
-          "type": "popappNumber"
+          "type": "popappStatement"
         },
         {
           "name": "Сервисные контакты",
-          "type": "popappStatement"
+          "type": "popappNumber"
         }
       ]
     }
